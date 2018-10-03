@@ -5,8 +5,8 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "io_kythe",
-    strip_prefix = "kythe-master",
-    urls = ["https://github.com/google/kythe/archive/master.zip"],
+    strip_prefix = "kythe-external",
+    urls = ["https://github.com/schroederc/kythe/archive/external.zip"],
 )
 
 rules_kotlin_version = "67f4a6050584730ebae7f8a40435a209f8e0b48e"
