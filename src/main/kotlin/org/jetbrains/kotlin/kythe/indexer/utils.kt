@@ -51,7 +51,7 @@ fun IrDeclaration.toNodeKind(): NodeKind {
         is IrEnumEntry -> NodeKind.CONSTANT
         is IrSimpleFunction -> NodeKind.FUNCTION
         is IrConstructor -> NodeKind.FUNCTION_CONSTRUCTOR
-        is IrProperty -> NodeKind.PROPERTY
+        is IrProperty -> throw UnsupportedOperationException("Properties are not supported yet")
         is IrField -> NodeKind.VARIABLE_FIELD
         is IrVariable -> NodeKind.VARIABLE_LOCAL
         is IrLocalDelegatedProperty -> throw UnsupportedOperationException("Delegation isn't supported yet")
@@ -69,5 +69,5 @@ fun ClassKind.toNodeKind(isCompanion: Boolean): NodeKind = when (this) {
     ClassKind.ENUM_CLASS -> NodeKind.SUM_ENUM_CLASS
     ClassKind.ENUM_ENTRY -> NodeKind.CONSTANT
     ClassKind.ANNOTATION_CLASS -> throw UnsupportedOperationException("Annotations are not supported yet")
-    ClassKind.OBJECT -> if (isCompanion) NodeKind.COMPANION else NodeKind.OBJECT
+    ClassKind.OBJECT -> throw UnsupportedOperationException("Objects are not supported yet")
 }
